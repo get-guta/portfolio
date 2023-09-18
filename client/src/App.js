@@ -1,21 +1,19 @@
-import { useEffect, useState } from "react";
 
+import React from "react";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 function App() {
-  const [name, setName] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:3000")
-      .then((res) => res.json())
-      .then((data) => setName(data));
-
-  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <p>{name.name}</p>
-      </header>
-    </div>
+    <main className="text-gray-400 bg-gray-900 body-font">
+      <Navbar />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+    </main>
   );
 }
 
